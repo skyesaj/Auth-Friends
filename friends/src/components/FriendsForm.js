@@ -25,11 +25,11 @@ class FriendsForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     if (
-      TouchList.state.friend.name !== "" &&
+      this.state.friend.name !== "" &&
       this.state.friend.age !== "" &&
       this.state.friend.email !== ""
     ) {
-      this.props.addFriend(JSON.parse(JSON.stringify(this.state.friend)));
+      this.props.addFriend(this.state.friend);
       this.setState({
         friend: {
           name: "",
@@ -38,6 +38,7 @@ class FriendsForm extends Component {
         }
       });
     }
+    console.log(this.state.friend);
   };
 
   render() {

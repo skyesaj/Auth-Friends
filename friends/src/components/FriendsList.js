@@ -27,14 +27,13 @@ class FriendsList extends Component {
       });
   };
 
-  addFriends = friend => {
+  addFriend = friend => {
     axiosWithAuth()
-      .post(
-        "http://localhost:5000/api/friends",
-        JSON.parse(JSON.stringify(friend))
-      )
+      .post("/friends", friend)
+
       .then(res => {
-        this.getData();
+        // this.getData();
+        console.log(res);
       })
       .catch(error => {
         console.log(error);
